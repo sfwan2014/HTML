@@ -1,0 +1,57 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-store, must-revalidate" />
+<meta http-equiv="expires" content="0" />
+<title></title>
+</head>
+<body>
+<br />
+<br />
+<br />
+<button onclick="shareFun();">调用分享</button>
+<br />
+<!-- <button onclick="regFun();">调用注册</button>
+<br />
+<button onclick="shareFun();">调用分享</button> -->
+
+<script type="text/javascript">
+//
+var data = "";
+function shareFun(){
+	var __content = "我是&&content";
+	var _shareContent = encodeURIComponent(__content);
+	var _shareTitle = encodeURIComponent("我是标题一我是标题二我是标题三我是标题四我是标题五我是标题六");
+	var _shareDescription = encodeURIComponent("我是导读一我是导读二我是导读三我是导读四我是导读五我是导读六");
+	var _shareWebUrl = encodeURIComponent("http://m.eunke.com/");
+	var _shareThumbUrl = encodeURIComponent("http://static.eunke.com/images/pc/siji.png");
+
+	var resultStr = 'content='+_shareContent+
+		'&title='+_shareTitle+
+		'&description='+_shareDescription+
+		'&webUrl='+_shareWebUrl+
+		'&thumbUrl='+_shareThumbUrl;
+
+	//alert(resultStr);
+	//alert(decodeURIComponent(resultStr));
+	
+	window.location.href="share_localcall";
+	data = resultStr;
+	window.app.share(resultStr);
+}
+
+function getShareContent(){
+	return data;
+}
+
+function regFun(){
+	window.app.startActivity("Register");
+}
+</script>
+</body>
+</html>

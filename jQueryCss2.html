@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title></title>
+		<script src="./jquery-1.11.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					var res="Background color = "+$("p").css("background-color");
+					$("div").text(res);
+					$("div").css("background-color",$("p").css("background-color"));
+					
+					$("p").css({"background-color":"yellow","font-size":"150%"});
+				});
+				
+				$("#btn2").click(function(){
+					var txt="";
+					txt+="width of div: "+$("div").width()+ "</br>";
+					txt+="Height of div: "+$("div").height();
+					$("div").html(txt);
+				});
+			});
+		</script>
+		
+	</head>
+	<body>
+		<h2>这是标题</h2>
+		<p style="background-color:#f00">这是一个段落.</p>
+		<p style="background-color:#0f0">这是一个段落.</p>
+		<p style="background-color:#00f">这是一个段落.</p>
+		<div style="height:100px;width:300px;padding:10px;margin:3px;border:1px solid blue;"></div>
+		<button id="btn1">返回 p 元素的背景颜色</button>
+		<button id="btn2">显示 div 的尺寸</button>
+	</body>
+</html>

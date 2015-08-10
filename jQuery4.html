@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+		<title></title>
+		<script src="./jquery-1.11.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					//$("p").append(" <b>追加文本</b>.");
+					$("p").prepend("<b>开头插入</b>.");
+				});
+				
+				$("#btn2").click(function(){
+					//$("ol").append("<li>追加列表项 item</li>");
+					$("ol").prepend("<li>开头插入</li>");
+				});
+				
+				$("#btn3").click(function(){
+					var txt1="<p>Text.</p>"
+					var txt2=$("<p></p>").text("Text.");
+					var txt3=document.createElement("p");
+					txt3.innerHTML="Text.";
+					$("body").append(txt1,txt2,txt3);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p>This is a paragraph.</p>
+		<p>This is another paragraph.</p>
+		<ol>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+		</ol>
+		<button id="btn1">追加文本</button>
+		<button id="btn2">追加列表项</button>
+		<button id="btn3">追加多个文本</button>
+	</body>
+</html>

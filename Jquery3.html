@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+	<head>
+		<script src="./jquery-1.11.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					$("#test1").text(function(i,origText){
+						return "旧文字: " + origText + "  新文字: 我是新蚊子! (index: " + i + ")"; 
+					});
+				});
+				
+				$("#btn2").click(function(){
+					$("#test2").html(function(i,origText){
+						return "旧文字 HTML: " + origText + "  新文字: <b>我是新蚊子!</b> (index: " + i + ")";
+					});
+				});
+				
+				$("#btn3").click(function(){
+					//$("#w3c").attr({
+//						"href":"http://www.w3school.com.cn/jquery/index.asp",
+//						"title":"W3School jQuery 教程"
+//					});
+					$("#w3c").attr("href",function(i,origValue){
+						return origValue + "/jquery";
+					});
+					
+				});
+				var i = 0;
+				$("#btn4").click(function(){
+					i++;
+					if (i%2==0) {
+						$("#color").css("color","red");
+					} else {
+						$("#color").css("color","#ffed34");
+					}
+					
+				});
+			});
+		</script>
+	</head>
+	<body>
+
+	<p id="test1">第一行<b>蚊子</b></p>
+	<p id="test2">第<b>二行</b>蚊子</p>
+	<button id="btn1">显示文本</button>
+	<button id="btn2">显示html</button>
+	
+	<hr />
+	<br /><br /><br />
+	<p>
+		<a href="http://www.w3school.com.cn" id="w3c">W3School.com.cn</a>
+	</p>
+	<button id="btn3">改变 href 和 title 值</button>
+	<p>请把鼠标移动到链接上, 或者点击该链接,来查看已经改变的 href 值和已经设置的 title 值</p>
+	</body>
+	
+	<hr />
+	<br /><br /><br />
+	<p id="color">这是个可变颜色的段落</p>
+	<button id="btn4">改变颜色</button>
+	<br /><br /><br /><br />
+</html>

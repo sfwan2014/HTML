@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	
+	<head>
+		<script src="./jquery-1.11.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					$("p#text").text($("#test").text());
+				});
+				$("#btn2").click(function(){
+					$("p#text").text($("#test").html());
+				});
+				$("#btn3").click(function(){
+					$("p#text").text($("input").val());
+				});
+			});
+		</script>
+		
+	</head>
+	<body>
+		<p id="test">这是段落中的<b>粗体</b>文本</p>
+		<p>姓名: <input type="text" id="test" value="米老鼠" /></p>
+		<p id="text">1111</p>
+		<button id="btn1">显示文本</button>
+		<button id="btn2">显示 HTML</button>
+		<button id="btn3">显示值</button>
+	</body>
+</html>
